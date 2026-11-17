@@ -1,0 +1,14 @@
+{
+  "name": "devops-demo-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tiny notes app for practising Docker, GitHub Actions and AWS EC2 deployment",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": { "express": "^4.21.2" }
+}

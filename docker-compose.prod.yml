@@ -1,0 +1,13 @@
+# Used on the EC2 server: pulls the ready-made image from GitHub Container Registry.
+# IMAGE and TAG are provided by the deploy step in the GitHub Actions workflow.
+services:
+  app:
+    image: ${IMAGE}:${TAG:-latest}
+    ports:
+      - "80:3000"                 # public port 80 → app port 3000
+    volumes:
+      - notes-data:/data
+    restart: unless-stopped
+
+volumes:
+  notes-data:
